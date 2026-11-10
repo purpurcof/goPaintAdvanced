@@ -30,7 +30,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:26.3.+")
+    compileOnly("io.papermc.paper:paper-api:26.3.build.190-stable")
 
     compileOnlyApi(platform("com.intellectualsites.bom:bom-newest:1.57-SNAPSHOT"))
     compileOnlyApi("com.fastasyncworldedit:FastAsyncWorldEdit-Core") { isTransitive = false }
