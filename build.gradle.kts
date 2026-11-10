@@ -21,7 +21,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:26.3.+")
+    compileOnly("io.papermc.paper:paper-api:26.3.build.190-stable")
 
     implementation("net.thenextlvl.core:files:4.0.0-pre1")
     implementation("net.thenextlvl.version-checker:modrinth-paper:1.0.1")
