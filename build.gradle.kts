@@ -4,10 +4,10 @@ import net.minecrell.pluginyml.paper.PaperPluginDescription
 
 plugins {
     id("java")
-    id("com.gradleup.shadow") version "9.5.1"
+    id("com.gradleup.shadow") version "9.6.1"
     id("io.papermc.hangar-publish-plugin") version "0.1.4"
     id("de.eldoria.plugin-yml.paper") version "0.9.0"
-    id("xyz.jpenilla.run-paper") version "3.0.2"
+    id("xyz.jpenilla.run-paper") version "3.1.0"
     id("com.modrinth.minotaur") version "2.+"
 }
 
@@ -21,14 +21,14 @@ repositories {
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:26.2.+")
+    compileOnly("io.papermc.paper:paper-api:26.3.+")
 
     implementation("net.thenextlvl.core:files:4.0.0-pre1")
     implementation("net.thenextlvl.version-checker:modrinth-paper:1.0.1")
-    
-    implementation("dev.faststats.metrics:bukkit:0.28.0")
+
+    implementation("dev.faststats.metrics:bukkit:0.31.0")
     implementation("org.bstats:bstats-bukkit:3.2.1")
-    
+
     implementation(project(":api"))
 }
 
@@ -75,9 +75,8 @@ configurations.compileClasspath {
 }
 
 tasks.shadowJar {
-    dependencies {
-        relocate("org.bstats", "${rootProject.group}.metrics")
-    }
+    relocate("org.bstats", "${rootProject.group}.metrics.bstats")
+    relocate("dev.faststats", "${rootProject.group}.metrics.faststats")
 }
 
 tasks.runServer {
